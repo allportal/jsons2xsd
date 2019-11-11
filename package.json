@@ -2,7 +2,7 @@
   "name": "jsons2xsd",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "Convert JSON Schemas to XSD",
   "main": "./src/index.js",
   "keywords": [],
   "author": "christoph.melzer@allportal.de",

@@ -6,7 +6,7 @@
   "main": "./src/index.js",
   "keywords": [],
   "author": "christoph.melzer@allportal.de",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "xmlbuilder": "^13.0.2"
   }

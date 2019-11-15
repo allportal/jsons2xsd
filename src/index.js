@@ -19,7 +19,7 @@ class Converter
 
         const type = jsonRootNode.type;
         if (type === null) {
-            throw new Error('type property of root the root element must be defined');
+            throw new Error('type property of the root element must be defined');
         }
 
         switch (type) {
@@ -42,7 +42,7 @@ class Converter
             throw new Error('required property "properties" is missing');
         }
 
-        xmlNode = this.createComplexType(xmlNode, jsonNode.title);
+        xmlNode = this.createComplexType(xmlNode, jsonNode);
 
         // there is only one type possible
         if (!Array.isArray(jsonNode.items)) {
@@ -60,7 +60,7 @@ class Converter
             throw new Error('required property "properties" is missing');
         }
 
-        xmlNode = this.createComplexType(xmlNode, jsonNode.title);
+        xmlNode = this.createComplexType(xmlNode, jsonNode);
 
         return this.doIterate(jsonNode.properties, xmlNode, jsonNode.requiredList);
     }
@@ -206,12 +206,9 @@ class Converter
         xmlNode.up(3);
     }
 
-    createComplexType(xmlNode, name) {
+    createComplexType(xmlNode, jsonNode) {
         xmlNode.addNode('xs:element');
-
-        if (name) {
-            xmlNode.addAttribute('name', name);
-        }
+        xmlNode.addAttribute('name', jsonNode.title !== null ? jsonNode.title : jsonNode.type);
 
         xmlNode.addNode('xs:complexType')
             .addNode('xs:sequence');

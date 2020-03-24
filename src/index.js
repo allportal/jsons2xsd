@@ -131,7 +131,7 @@ class Converter
         }
 
         if (jsonNode.pattern !== null) {
-            xmlNode.addNode('pattern', {value: jsonNode.pattern})
+            xmlNode.addNode('xs:pattern', {value: jsonNode.pattern})
                 .up();
         }
 

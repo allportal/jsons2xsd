@@ -1,6 +1,6 @@
 {
   "name": "jsons2xsd",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Convert JSON Schemas to XSD",
   "main": "./src/index.js",

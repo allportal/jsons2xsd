@@ -148,12 +148,12 @@ class Converter
             .addNode('xs:restriction', {base: `xs:${xsdType}`});
 
         if (jsonNode.minimum !== null) {
-            xmlNode.addNode('minInclusive', {value: jsonNode.minimum})
+            xmlNode.addNode('xs:minInclusive', {value: jsonNode.minimum})
                 .up();
         }
 
         if (jsonNode.maximum !== null) {
-            xmlNode.addNode('maxInclusive', {value: jsonNode.maximum})
+            xmlNode.addNode('xs:maxInclusive', {value: jsonNode.maximum})
                 .up();
         }
 
